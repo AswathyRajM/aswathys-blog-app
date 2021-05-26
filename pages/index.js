@@ -2,54 +2,23 @@ import { Fragment } from "react";
 import FeaturedPosts from "../components/home-page/featured-posts";
 import Hero from "../components/home-page/hero";
 
-const DUMMY_POSTS = [
-  {
-    title: "Getting started with nextjs1",
-    date: "2021-05-26",
-    excerpt:
-      "Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
-    image: "getting-started-nextjs.png",
-    slug: "getting-started-with-nextjs1",
-  },
-  {
-    title: "Getting started with nextjs2",
-    date: "2021-05-26",
-    excerpt:
-      "Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
-    image: "getting-started-nextjs.png",
-    slug: "getting-started-with-nextjs2",
-  },
-  {
-    title: "Getting started with nextjs3",
-    date: "2021-05-26",
-    excerpt:
-      "Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
-    image: "getting-started-nextjs.png",
-    slug: "getting-started-with-nextjs3",
-  },
-  {
-    title: "Getting started with nextjs4",
-    date: "2021-05-26",
-    excerpt:
-      "Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
-    image: "getting-started-nextjs.png",
-    slug: "getting-started-with-nextjs4",
-  },
-  {
-    title: "Getting started with nextjs5",
-    date: "2021-05-26",
-    excerpt:
-      "Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
-    image: "getting-started-nextjs.png",
-    slug: "getting-started-with-nextjs5",
-  },
-];
+import { getFeaturedPosts } from "../util/posts.util";
 
-export default function HomePage() {
+export default function HomePage({ posts }) {
   return (
     <Fragment>
       <Hero />
-      <FeaturedPosts posts={DUMMY_POSTS} />
+      <FeaturedPosts posts={posts} />
     </Fragment>
   );
+}
+
+export function getStaticProps() {
+  const featuredPosts = getFeaturedPosts();
+  return {
+    props: {
+      posts: featuredPosts,
+    },
+    revalidate: 1800,
+  };
 }
