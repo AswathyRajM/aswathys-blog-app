@@ -32,16 +32,6 @@ const PostContent = ({ post }) => {
       } else return <p>{paragraph.children}</p>;
     },
 
-    // code({ language, value }) {
-    //   return (
-    //     <SyntaxHighlighter
-    //       style={atomDark}
-    //       language={language}
-    //       children={value}
-    //     />
-    //   );
-    // },
-
     code(code) {
       const { className, children } = code;
       const match = /language-(\w+)/.exec(className || "");
@@ -54,7 +44,6 @@ const PostContent = ({ post }) => {
           children={String(children).replace(/\n$/, "")}
         />
       );
-      return null;
     },
   };
   return (
