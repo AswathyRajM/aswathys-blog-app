@@ -23,14 +23,14 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [requestStatus, setRequestStatus] = useState();
-  const [requestError, setRequestError] = useState();
+  const [requestStatus, setRequestStatus] = useState("");
+  const [requestError, setRequestError] = useState("");
 
   useEffect(() => {
     if (requestStatus === "success" || requestStatus === "error") {
       const timer = setTimeout(() => {
-        setRequestError(null);
-        setRequestStatus(null);
+        setRequestError("");
+        setRequestStatus("");
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -50,7 +50,7 @@ export default function ContactForm() {
       setMessage("");
       setName("");
     } catch (error) {
-      setRequestError(error);
+      setRequestError(error.message);
       setRequestStatus("error");
     }
   };
