@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     let client;
     try {
       client = await MongoClient.connect(
-        "mongodb+srv://admin1:vkPhmqQm.8!3Rnk@next-blog.1g5en.mongodb.net/next-blog?retryWrites=true&w=majority"
+        "mongodb+srv://admin1:vkPhmqQm.8!3Rnk@next-blog.1g5en.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
       );
     } catch (error) {
       res.status(500).json({ message: "Something went wrong" });
