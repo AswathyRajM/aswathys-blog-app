@@ -26,7 +26,7 @@ function Notification(props) {
   );
   // console.log(document.getElementById("notifications"));
 
-  // return (
+  // return ( 
   //   <div id="notification" className={cssClasses}>
   //     <h2>{title}</h2>
   //     <p>{message}</p>
