@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 You can read and search for Javascript programming related blogs here. 
 
 ### View Live
-https://next-blog-app-ten.vercel.app/
+https://aswathys-blog-app.vercel.app/
 
 
 ## Getting Started
