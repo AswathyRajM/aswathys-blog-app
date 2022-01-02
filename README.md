@@ -1,7 +1,9 @@
+# Aswathy's Blog (Nextjs-Blog)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+You can read and search for Javascript programming related blogs here. 
 
-
-# View Live
+### View Live
 https://next-blog-app-ten.vercel.app/
 
 
